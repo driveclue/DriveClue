@@ -92,7 +92,9 @@ Notarization needs an App Store Connect API key or an app-specific password stor
 
 ## Privacy
 
-DriveClue stores history locally in `~/Library/Application Support/DriveStats/history.sqlite`. It keeps the original bundle identifier, settings keys, and Keychain service so existing installations retain their history, preferences, and SMTP passwords. Email is sent only if you enable it.
+DriveClue reads drive health information from macOS. To show trends and changes between scans, it saves drive health samples on your Mac in `~/Library/Application Support/DriveStats/history.sqlite`.
+
+Email reports are off by default. If you enable them in Settings, DriveClue can send a report through Apple Mail or an SMTP server you configure. An SMTP password, if you enter one, is stored in macOS Keychain.
 
 ## License and redistribution
 
