@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F2464BACCB1BD570F88F734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C44348705BF0CC53F3C123 /* Assets.xcassets */; };
+		37B89DDD09B6D555150F627B /* DetailViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EBFDD5E07DD309778A6860 /* DetailViews.swift */; };
+		58BE5E361150AD610743ED4C /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */; };
+		5BE35C2C64A884071D56B3AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F5EBE99F7519C8868CE0 /* ContentView.swift */; };
+		AD966FEA372AC894EF683903 /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19B68C9B5E8F6C5464301C /* Mailer.swift */; };
+		B2BF0F3E7349766527276A1C /* DriveClueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4780CCC7AF3FEAF412BF102F /* DriveClueApp.swift */; };
+		BC6831F4DDD1A76A9D377BE6 /* DriveClueCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2BA0DCB9EB20DB0AAF9B5709 /* DriveClueCore */; };
+		CF1FAAEC40FEF49BBA638C65 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129E5047B4D44606C59D81B5 /* DashboardView.swift */; };
+		EC1E39C44F5058FDE74CDAC2 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51FED2E96AF418771C863A /* AppModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		129E5047B4D44606C59D81B5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		2F4A2EA2772994E0164F7E68 /* DriveClue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveClue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4780CCC7AF3FEAF412BF102F /* DriveClueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveClueApp.swift; sourceTree = "<group>"; };
+		5CE0F5EBE99F7519C8868CE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		B8EBFDD5E07DD309778A6860 /* DetailViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViews.swift; sourceTree = "<group>"; };
+		D9C44348705BF0CC53F3C123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE19B68C9B5E8F6C5464301C /* Mailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
+		E1AE451BCC8A107BFA692AF9 /* DriveClueCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DriveClueCore; path = DriveClueCore; sourceTree = SOURCE_ROOT; };
+		EB51FED2E96AF418771C863A /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA81750024929005F588C367 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6831F4DDD1A76A9D377BE6 /* DriveClueCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54D147FD1C766C557420C28B /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				E1AE451BCC8A107BFA692AF9 /* DriveClueCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		AB794B5BD182F13FBFEF1CEE = {
+			isa = PBXGroup;
+			children = (
+				E3859EC47ECCA805101992D2 /* App */,
+				54D147FD1C766C557420C28B /* Packages */,
+				FD292FF7D127FDB469959159 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3859EC47ECCA805101992D2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EB51FED2E96AF418771C863A /* AppModel.swift */,
+				D9C44348705BF0CC53F3C123 /* Assets.xcassets */,
+				5CE0F5EBE99F7519C8868CE0 /* ContentView.swift */,
+				129E5047B4D44606C59D81B5 /* DashboardView.swift */,
+				B8EBFDD5E07DD309778A6860 /* DetailViews.swift */,
+				4780CCC7AF3FEAF412BF102F /* DriveClueApp.swift */,
+				DE19B68C9B5E8F6C5464301C /* Mailer.swift */,
+				85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FD292FF7D127FDB469959159 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F4A2EA2772994E0164F7E68 /* DriveClue.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA662735C0BBFB76CD26A836 /* DriveClue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4008C827EB2FC2902571907E /* Build configuration list for PBXNativeTarget "DriveClue" */;
+			buildPhases = (
+				C110898A00AFAE8194782502 /* Sources */,
+				213E9FA5C3F82B2944855AA5 /* Resources */,
+				AA81750024929005F588C367 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DriveClue;
+			packageProductDependencies = (
+				2BA0DCB9EB20DB0AAF9B5709 /* DriveClueCore */,
+			);
+			productName = DriveClue;
+			productReference = 2F4A2EA2772994E0164F7E68 /* DriveClue.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F5EACD8BB673B00200D93DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					BA662735C0BBFB76CD26A836 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 5F58D1DF21C7F644F8938C7F /* Build configuration list for PBXProject "DriveClue" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = AB794B5BD182F13FBFEF1CEE;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				995BCD7F6AA755F3717367C5 /* XCLocalSwiftPackageReference "DriveClueCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FD292FF7D127FDB469959159 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA662735C0BBFB76CD26A836 /* DriveClue */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		213E9FA5C3F82B2944855AA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F2464BACCB1BD570F88F734 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C110898A00AFAE8194782502 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1E39C44F5058FDE74CDAC2 /* AppModel.swift in Sources */,
+				5BE35C2C64A884071D56B3AD /* ContentView.swift in Sources */,
+				CF1FAAEC40FEF49BBA638C65 /* DashboardView.swift in Sources */,
+				37B89DDD09B6D555150F627B /* DetailViews.swift in Sources */,
+				B2BF0F3E7349766527276A1C /* DriveClueApp.swift in Sources */,
+				AD966FEA372AC894EF683903 /* Mailer.swift in Sources */,
+				58BE5E361150AD610743ED4C /* PreferencesView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		21B192F48359478E6317B586 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		51277DABC6F78FF752799A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DriveClue;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "DriveClue uses Apple Mail only when you choose it for health reports.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drivestats.DriveStats;
+				PRODUCT_NAME = DriveClue;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9EE55938CF525711A608F3C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D5DE6C30E040113A76CAAF6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DriveClue;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "DriveClue uses Apple Mail only when you choose it for health reports.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drivestats.DriveStats;
+				PRODUCT_NAME = DriveClue;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4008C827EB2FC2902571907E /* Build configuration list for PBXNativeTarget "DriveClue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5DE6C30E040113A76CAAF6C /* Debug */,
+				51277DABC6F78FF752799A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5F58D1DF21C7F644F8938C7F /* Build configuration list for PBXProject "DriveClue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21B192F48359478E6317B586 /* Debug */,
+				9EE55938CF525711A608F3C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		995BCD7F6AA755F3717367C5 /* XCLocalSwiftPackageReference "DriveClueCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = DriveClueCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2BA0DCB9EB20DB0AAF9B5709 /* DriveClueCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DriveClueCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4F5EACD8BB673B00200D93DD /* Project object */;
+}

@@ -1,0 +1,40 @@
+name: DriveClue
+options:
+  bundleIdPrefix: com.drivestats
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+packages:
+  DriveClueCore:
+    path: DriveClueCore
+targets:
+  DriveClue:
+    type: application
+    platform: macOS
+    sources:
+      - path: App
+    dependencies:
+      - package: DriveClueCore
+        product: DriveClueCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.drivestats.DriveStats
+        PRODUCT_NAME: DriveClue
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: DriveClue
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSAppleEventsUsageDescription: DriveClue uses Apple Mail only when you choose it for health reports.
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        SWIFT_VERSION: "5.0"
+        COMBINE_HIDPI_IMAGES: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+scheme:
+  DriveClue:
+    build:
+      targets:
+        DriveClue: all

@@ -1,0 +1,10 @@
+.DS_Store
+.build/
+.swiftpm/
+DerivedData/
+.cocoindex_code/
+Web/
+*.dmg
+*.zip
+*.xcuserstate
+xcuserdata/
