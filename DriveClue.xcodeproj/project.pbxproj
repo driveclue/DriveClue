@@ -11,8 +11,8 @@
 		37B89DDD09B6D555150F627B /* DetailViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EBFDD5E07DD309778A6860 /* DetailViews.swift */; };
 		58BE5E361150AD610743ED4C /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */; };
 		5BE35C2C64A884071D56B3AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F5EBE99F7519C8868CE0 /* ContentView.swift */; };
-		AD966FEA372AC894EF683903 /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19B68C9B5E8F6C5464301C /* Mailer.swift */; };
 		B2BF0F3E7349766527276A1C /* DriveClueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4780CCC7AF3FEAF412BF102F /* DriveClueApp.swift */; };
+		B2F0667C31CBD80DE1B22622 /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB57733350679DE647A025C /* UpdateChecker.swift */; };
 		BC6831F4DDD1A76A9D377BE6 /* DriveClueCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2BA0DCB9EB20DB0AAF9B5709 /* DriveClueCore */; };
 		CF1FAAEC40FEF49BBA638C65 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129E5047B4D44606C59D81B5 /* DashboardView.swift */; };
 		EC1E39C44F5058FDE74CDAC2 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51FED2E96AF418771C863A /* AppModel.swift */; };
@@ -25,8 +25,8 @@
 		5CE0F5EBE99F7519C8868CE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		B8EBFDD5E07DD309778A6860 /* DetailViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViews.swift; sourceTree = "<group>"; };
+		BCB57733350679DE647A025C /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
 		D9C44348705BF0CC53F3C123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE19B68C9B5E8F6C5464301C /* Mailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
 		E1AE451BCC8A107BFA692AF9 /* DriveClueCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DriveClueCore; path = DriveClueCore; sourceTree = SOURCE_ROOT; };
 		EB51FED2E96AF418771C863A /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,8 +69,8 @@
 				129E5047B4D44606C59D81B5 /* DashboardView.swift */,
 				B8EBFDD5E07DD309778A6860 /* DetailViews.swift */,
 				4780CCC7AF3FEAF412BF102F /* DriveClueApp.swift */,
-				DE19B68C9B5E8F6C5464301C /* Mailer.swift */,
 				85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */,
+				BCB57733350679DE647A025C /* UpdateChecker.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -163,8 +163,8 @@
 				CF1FAAEC40FEF49BBA638C65 /* DashboardView.swift in Sources */,
 				37B89DDD09B6D555150F627B /* DetailViews.swift in Sources */,
 				B2BF0F3E7349766527276A1C /* DriveClueApp.swift in Sources */,
-				AD966FEA372AC894EF683903 /* Mailer.swift in Sources */,
 				58BE5E361150AD610743ED4C /* PreferencesView.swift in Sources */,
+				B2F0667C31CBD80DE1B22622 /* UpdateChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DriveClue;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "DriveClue uses Apple Mail only when you choose it for health reports.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -328,7 +327,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DriveClue;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "DriveClue uses Apple Mail only when you choose it for health reports.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

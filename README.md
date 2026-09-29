@@ -29,7 +29,7 @@ DriveClue turns drive health data into a readable dashboard. It combines an over
 - **Health at a glance:** overall health, SSD life, temperature, problems, and important indicators.
 - **The details when you need them:** searchable health indicators, device statistics, error logs, and ATA self-test results.
 - **History on your Mac:** local trends for health, SSD life, temperature, and data written.
-- **Reports and alerts:** save a report, set free-space alerts, and optionally send email reports.
+- **Reports and alerts:** save a report and set local free-space alerts.
 - **Menu bar access:** check drive status without keeping the main window open.
 
 ## Drive support
@@ -94,7 +94,7 @@ Notarization needs an App Store Connect API key or an app-specific password stor
 
 DriveClue reads drive health information from macOS. To show trends and changes between scans, it saves drive health samples on your Mac in `~/Library/Application Support/DriveStats/history.sqlite`.
 
-Email reports are off by default. If you enable them in Settings, DriveClue can send a report through Apple Mail or an SMTP server you configure. An SMTP password, if you enter one, is stored in macOS Keychain.
+DriveClue does not send drive health reports by email.
 
 ## License and redistribution
 

@@ -147,15 +147,6 @@ final class AppModel {
         releaseSleepAssertion()
     }
 
-    func sendTestEmail() async {
-        do {
-            try await MailService.send(settings: settings, subject: "DriveClue test message", body: "DriveClue can reach this mailbox.")
-            alertText = "Test message sent."
-        } catch {
-            alertText = error.localizedDescription
-        }
-    }
-
     func checkForUpdates() async {
         alertText = await UpdateChecker.summary(feed: settings.updateFeedURL)
     }
@@ -166,7 +157,6 @@ final class AppModel {
             if let previous, previous < drive.smartStatus {
                 history.addEvent(driveID: drive.id, kind: "status", message: "Status changed to \(drive.smartStatus.title).")
                 notify(title: drive.displayName, body: drive.verdict)
-                considerEmail(drive: drive, reason: "Status is now \(drive.smartStatus.title).")
             } else if previous == nil && drive.smartStatus >= .warning {
                 notify(title: drive.displayName, body: drive.verdict)
             }
@@ -176,9 +166,6 @@ final class AppModel {
             } else if selfTestWasRunning.contains(drive.id) {
                 selfTestWasRunning.remove(drive.id)
                 history.addEvent(driveID: drive.id, kind: "self-test", message: "A self-test finished.")
-                if settings.emailEnabled && settings.emailOnSelfTestComplete {
-                    considerEmail(drive: drive, reason: "A self-test finished.", force: true)
-                }
             }
             if let bytes = drive.bytesWritten, let previousBytes = histories[drive.id]?.dropLast().last?.bytesWritten, bytes > UInt64(previousBytes) + 50_000_000_000 {
                 history.addEvent(driveID: drive.id, kind: "bytes", message: "Writes jumped by \(ByteFormat.bytes(bytes - UInt64(previousBytes))).")
@@ -195,31 +182,6 @@ final class AppModel {
                 UserDefaults.standard.set(Date(), forKey: "DriveStats.lastAllClear")
             }
         }
-        if settings.emailEnabled && settings.dailyReportEnabled {
-            let hour = Calendar.current.component(.hour, from: Date())
-            let day = Calendar.current.ordinality(of: .day, in: .era, for: Date()) ?? 0
-            let sentDay = UserDefaults.standard.integer(forKey: "DriveStats.dailyReportDay")
-            if hour >= settings.dailyReportHour && sentDay != day {
-                UserDefaults.standard.set(day, forKey: "DriveStats.dailyReportDay")
-                Task { try? await MailService.send(settings: settings, subject: "DriveClue daily report", body: ReportBuilder.text(drives: drives)) }
-            }
-        }
-    }
-
-    private func considerEmail(drive: DriveSnapshot, reason: String, force: Bool = false) {
-        guard settings.emailEnabled else { return }
-        let crossedHealth = settings.emailHealthEnabled && drive.overallHealth < Double(settings.emailHealthBelow)
-        let crossedPerformance = settings.emailPerformanceEnabled && (drive.performance ?? 100) < Double(settings.emailPerformanceBelow)
-        let crossedLife = settings.emailSSDLifeEnabled && (drive.ssdLife ?? 100) < Double(settings.emailSSDLifeBelow)
-        let onIssue = settings.emailTrigger == .onIssue && drive.smartStatus >= .warning
-        let onChange = settings.emailTrigger == .onAnyChange
-        guard force || onIssue || onChange || crossedHealth || crossedPerformance || crossedLife else { return }
-        let key = "DriveStats.emailed.\(drive.id)"
-        let last = UserDefaults.standard.object(forKey: key) as? Date ?? .distantPast
-        guard Date().timeIntervalSince(last) > 6 * 3600 || force else { return }
-        UserDefaults.standard.set(Date(), forKey: key)
-        let body = reason + "\n\n" + ReportBuilder.text(drives: [drive])
-        Task { try? await MailService.send(settings: settings, subject: "DriveClue: \(drive.displayName)", body: body) }
     }
 
     private func notify(title: String, body: String) {
