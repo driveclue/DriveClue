@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#35B374"/>
+      <stop offset="0.55" stop-color="#1F8E56"/>
+      <stop offset="1" stop-color="#0E6240"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#CDEBDB"/>
+    </linearGradient>
+    <clipPath id="sq"><rect x="100" y="100" width="824" height="824" rx="186"/></clipPath>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#012F1C" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#bg)"/>
+  <g clip-path="url(#sq)">
+    <!-- pulse rings -->
+    <g fill="none" stroke="#FFFFFF">
+      <circle cx="472" cy="545" r="300" stroke-opacity="0.12" stroke-width="5"/>
+      <circle cx="472" cy="545" r="390" stroke-opacity="0.08" stroke-width="5"/>
+      <circle cx="472" cy="545" r="480" stroke-opacity="0.05" stroke-width="5"/>
+    </g>
+  </g>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#sheen)"/>
+
+  <!-- storage drive hero -->
+  <g transform="translate(0,6)">
+    <rect x="212" y="612" width="520" height="78" rx="39" fill="#8FC7AC"/>
+    <g filter="url(#ds)">
+      <rect x="212" y="430" width="520" height="230" rx="48" fill="url(#metal)"/>
+    </g>
+    <g fill="#0E6240" opacity="0.25">
+      <rect x="262" y="476" width="78" height="18" rx="9"/>
+      <rect x="262" y="512" width="78" height="18" rx="9"/>
+      <rect x="262" y="548" width="78" height="18" rx="9"/>
+    </g>
+    <rect x="706" y="522" width="26" height="22" rx="11" fill="#0E6240" opacity="0.4"/>
+    <circle cx="664" cy="588" r="30" fill="#35E07F" opacity="0.28"/>
+    <circle cx="664" cy="588" r="15" fill="#21C46D"/>
+  </g>
+
+  <!-- health badge, top-right corner -->
+  <circle cx="692" cy="398" r="104" fill="#FFFFFF"/>
+  <circle cx="692" cy="398" r="88" fill="#0C4A33"/>
+  <circle cx="692" cy="398" r="74" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="4"/>
+  <path d="M 692 452 C 664 428, 647 408, 647 388 C 647 369, 661 357, 675 357 C 684 357, 690 363, 692 369 C 694 363, 700 357, 709 357 C 723 357, 737 369, 737 388 C 737 408, 720 428, 692 452 Z" fill="#FFFFFF"/>
+  <polyline points="660,400 672,400 680,384 692,416 704,400 716,400" fill="none" stroke="#0C4A33" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

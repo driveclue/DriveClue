@@ -2,6 +2,10 @@
 .build/
 .swiftpm/
 DerivedData/
+build/
+releases/
+.playwright-mcp/
+.zcode/
 .cocoindex_code/
 Web/
 *.dmg

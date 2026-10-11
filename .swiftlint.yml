@@ -1,0 +1,14 @@
+# Project guardrails. Intentionally minimal (only_rules) so the checks stay predictable.
+# Enforces the project rule that source files stay under 500 lines.
+# Run with: swiftlint  (install via: brew install swiftlint)
+only_rules:
+  - file_length
+file_length:
+  warning: 500
+  error: 600
+excluded:
+  - DriveClueCore/.build
+  - DerivedData
+  - build
+  - .zcode
+  - .playwright-mcp

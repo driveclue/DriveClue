@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DriveClue — M.2 SSD × Clinical Readout</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 40px 48px 64px;
+    background: #14171c; color: #e8edf2;
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  }
+  h1 { font-size: 26px; font-weight: 700; margin: 0 0 6px; }
+  .sub { color: #93a1af; font-size: 14px; margin: 0 0 36px; max-width: 1100px; line-height: 1.5; }
+  .row { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; max-width: 1640px; }
+  .main {
+    background: #1d2127; border: 1px solid #2a3038; border-radius: 18px;
+    padding: 28px; display: flex; flex-direction: column; align-items: center;
+  }
+  .main img.big { width: 440px; height: 440px; filter: drop-shadow(0 16px 32px rgba(0,0,0,.55)); }
+  .main img.mid { width: 220px; height: 220px; margin-top: 24px; filter: drop-shadow(0 10px 20px rgba(0,0,0,.5)); }
+  .side { display: flex; flex-direction: column; gap: 20px; }
+  .ref {
+    background: #1d2127; border: 1px solid #2a3038; border-radius: 18px;
+    padding: 20px 24px; display: flex; align-items: center; gap: 20px;
+  }
+  .ref img { width: 130px; height: 130px; filter: drop-shadow(0 8px 16px rgba(0,0,0,.45)); }
+  .ref div p { margin: 4px 0 0; font-size: 13px; color: #9fb0bf; max-width: 330px; line-height: 1.45; }
+  .ref div h3 { margin: 0; font-size: 15px; }
+  .chips { display: flex; gap: 14px; }
+  .chip { border-radius: 14px; padding: 14px 16px; display: flex; align-items: flex-end; gap: 14px; }
+  .chip.light { background: #eef1f5; }
+  .chip.dark  { background: #0b0d10; border: 1px solid #2a3038; }
+  .chip img { display: block; }
+  .chipbox { background: #1d2127; border: 1px solid #2a3038; border-radius: 18px; padding: 20px 24px; }
+  .chipbox h3 { margin: 0 0 14px; font-size: 15px; }
+</style>
+</head>
+<body>
+  <h1>DriveClue — M.2 SSD × Clinical Readout</h1>
+  <p class="sub">The Icons8 fluent M.2 SSD as the hero, vertically centered on the Clinical Readout tile (teal gradient + arc highlight), with its readout card (EKG, measurement line, LED) in front.</p>
+
+  <div class="row">
+    <div class="main">
+      <img class="big" src="i1-m2-clinical.svg" alt="Combined icon">
+      <img class="mid" src="i1-m2-clinical.svg" alt="Combined icon at 220">
+    </div>
+
+    <div class="side">
+      <div class="chipbox">
+        <h3>Legibility · 64 / 40 / 24 / 16 px</h3>
+        <div class="chips">
+          <div class="chip light">
+            <img src="i1-m2-clinical.svg" width="64"><img src="i1-m2-clinical.svg" width="40"><img src="i1-m2-clinical.svg" width="24"><img src="i1-m2-clinical.svg" width="16">
+          </div>
+          <div class="chip dark">
+            <img src="i1-m2-clinical.svg" width="64"><img src="i1-m2-clinical.svg" width="40"><img src="i1-m2-clinical.svg" width="24"><img src="i1-m2-clinical.svg" width="16">
+          </div>
+        </div>
+      </div>
+      <div class="ref">
+        <img src="m2-ssd-src.png" alt="Source M.2 SSD">
+        <div>
+          <h3>Source · Icons8 fluent M.2 SSD</h3>
+          <p>Green PCB, dark chips, notched edge, gold connector fingers — the storage cue you picked.</p>
+        </div>
+      </div>
+      <div class="ref">
+        <img src="new-directions-2026-09-29/03-clinical-readout.png" alt="Clinical Readout concept">
+        <div>
+          <h3>Base · Clinical Readout</h3>
+          <p>Teal gradient tile, arc highlight, white case, dark screen with EKG chart, plus-stamp — the concept it&rsquo;s combined with.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

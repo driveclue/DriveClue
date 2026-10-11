@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#35B374"/>
+      <stop offset="0.55" stop-color="#1F8E56"/>
+      <stop offset="1" stop-color="#0E6240"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#012F1C" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#bg)"/>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#sheen)"/>
+
+  <g transform="translate(26,10)">
+    <!-- drive (dark face so the white cord reads clearly) -->
+    <g filter="url(#ds)">
+      <rect x="292" y="340" width="440" height="300" rx="56" fill="#0C4A33" stroke="#FFFFFF" stroke-width="40"/>
+    </g>
+    <rect x="340" y="572" width="92" height="22" rx="11" fill="#FFFFFF" opacity="0.3"/>
+    <circle cx="470" cy="583" r="12" fill="#45E082"/>
+
+    <!-- stethoscope -->
+    <g fill="none" stroke="#FFFFFF" stroke-linecap="round">
+      <path d="M 566 634 C 520 700, 430 724, 366 696 C 296 664, 266 584, 284 496 C 298 424, 338 374, 394 348 C 428 338, 462 330, 492 330" stroke-width="30"/>
+      <path d="M 492 330 C 462 326, 438 312, 428 274" stroke-width="28"/>
+      <path d="M 492 330 C 522 326, 546 312, 556 274" stroke-width="28"/>
+      <line x1="428" y1="268" x2="424" y2="244" stroke-width="28"/>
+      <line x1="556" y1="268" x2="560" y2="244" stroke-width="28"/>
+      <circle cx="640" cy="560" r="74" stroke-width="32"/>
+    </g>
+    <circle cx="640" cy="560" r="56" fill="#0C4A33"/>
+    <polyline points="612,560 634,560 646,536 664,584 676,560 692,560" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

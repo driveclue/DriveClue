@@ -19,6 +19,8 @@ typedef struct {
     char bsd_name[32];
     int transport; /* 0 none, 1 ATA, 2 NVMe */
     int smart_capable;
+    int removable;
+    int ejectable;
     uint64_t media_size;
     uint32_t block_size;
     char registry_model[64];
@@ -43,7 +45,6 @@ typedef struct {
     int has_selftest_log;
     uint8_t devstat[DS_DEVSTAT_BYTES];
     int devstat_bytes;
-    int threshold_exceeded; /* -1 unknown, 0 no, 1 yes */
     char error[256];
 } DSATARaw;
 
@@ -61,13 +62,28 @@ typedef struct {
     uint64_t data_units_written;
     uint64_t host_read_commands;
     uint64_t host_write_commands;
+    uint64_t controller_busy_time;   /* minutes, NVMe SMART log */
     uint64_t power_cycles;
     uint64_t power_on_hours;
     uint64_t unsafe_shutdowns;
     uint64_t media_errors;
     uint64_t error_log_entries;
+    uint32_t warning_temp_time;      /* minutes above the warning composite temperature */
+    uint32_t critical_temp_time;     /* minutes above the critical composite temperature */
+    uint32_t max_data_transfer_size; /* MDTS: power-of-two page count, 0 = not limited */
+    uint16_t optional_admin_commands;
+    uint8_t  log_page_attributes;
+    uint8_t  error_log_page_entries;
+    uint8_t  power_state_count;
+    uint16_t optional_nvm_commands;
+    uint8_t  format_nvm_attributes;
+    uint8_t  volatile_write_cache;
+    uint32_t namespace_count;
     uint64_t namespace_bytes;
+    uint64_t namespace_capacity_bytes;
+    uint64_t namespace_utilization_bytes;
     uint32_t lba_size;
+    int has_identify;                /* 1 when the controller identify data was read */
     char error[256];
 } DSNVMeRaw;
 

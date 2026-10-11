@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#20618F"/>
+      <stop offset="0.55" stop-color="#14406B"/>
+      <stop offset="1" stop-color="#0C2846"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3DDC7A"/>
+      <stop offset="1" stop-color="#27C063"/>
+    </linearGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#001325" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#bg)"/>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#sheen)"/>
+
+  <!-- drive outline -->
+  <g filter="url(#ds)">
+    <rect x="292" y="372" width="440" height="280" rx="62" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-width="42"/>
+  </g>
+  <!-- indicator LEDs -->
+  <circle cx="344" cy="430" r="10" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="378" cy="430" r="10" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="412" cy="430" r="10" fill="#FFFFFF" opacity="0.55"/>
+  <!-- vitals pulse -->
+  <polyline points="348,522 448,522 492,430 548,596 592,522 676,522" fill="none" stroke="url(#pulse)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

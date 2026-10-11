@@ -1,0 +1,138 @@
+[
+  {
+    "feature": "DASHBOARD",
+    "label": "01 / DASHBOARD",
+    "headline": "Your drive health, at a glance.",
+    "headlineLines": [
+      "Your drive health,",
+      "at a glance."
+    ],
+    "description": "Check S.M.A.R.T. status, overall health, and SSD lifetime in one clear overview.",
+    "descriptionLines": [
+      "Check S.M.A.R.T. status,",
+      "overall health, and SSD lifetime",
+      "in one clear overview."
+    ],
+    "alt": "DriveClue dashboard showing S.M.A.R.T. status, 100% overall health, and 89% SSD lifetime remaining.",
+    "png": "01-dashboard.png",
+    "webp": "web/01-dashboard.webp",
+    "original": "originals/01-dashboard.png",
+    "crop": {
+      "left": 24,
+      "top": 22,
+      "width": 2496,
+      "height": 1790
+    },
+    "width": 2560,
+    "height": 1600
+  },
+  {
+    "feature": "HEALTH INDICATORS",
+    "label": "02 / HEALTH INDICATORS",
+    "headline": "Every signal. One clear view.",
+    "headlineLines": [
+      "Every signal.",
+      "One clear view."
+    ],
+    "description": "Explore S.M.A.R.T. indicators, temperature, and wear with searchable, filterable details.",
+    "descriptionLines": [
+      "Explore S.M.A.R.T. indicators,",
+      "temperature, and wear with",
+      "searchable, filterable details."
+    ],
+    "alt": "DriveClue Health Indicators with searchable S.M.A.R.T. readings, type and status filters, temperature, and SSD wear.",
+    "png": "02-health-indicators.png",
+    "webp": "web/02-health-indicators.webp",
+    "original": "originals/02-health-indicators.png",
+    "crop": {
+      "left": 30,
+      "top": 26,
+      "width": 2496,
+      "height": 1790
+    },
+    "width": 2560,
+    "height": 1600
+  },
+  {
+    "feature": "DEVICE STATISTICS",
+    "label": "03 / DEVICE STATISTICS",
+    "headline": "Your drive’s story, in numbers.",
+    "headlineLines": [
+      "Your drive’s story,",
+      "in numbers."
+    ],
+    "description": "See lifetime reads and writes, power cycles, SSD endurance, and temperature at a glance.",
+    "descriptionLines": [
+      "See lifetime reads and writes,",
+      "power cycles, SSD endurance,",
+      "and temperature at a glance."
+    ],
+    "alt": "DriveClue Device Statistics showing lifetime drive activity, power cycles, SSD endurance, and temperature.",
+    "png": "03-device-statistics.png",
+    "webp": "web/03-device-statistics.webp",
+    "original": "originals/03-device-statistics.png",
+    "crop": {
+      "left": 8,
+      "top": 16,
+      "width": 2496,
+      "height": 1790
+    },
+    "width": 2560,
+    "height": 1600
+  },
+  {
+    "feature": "DISK SPEED TEST",
+    "label": "04 / DISK SPEED TEST",
+    "headline": "Put performance to the test.",
+    "headlineLines": [
+      "Put performance",
+      "to the test."
+    ],
+    "description": "Benchmark sequential read and write speeds with configurable test sizes and repeat runs.",
+    "descriptionLines": [
+      "Benchmark sequential read",
+      "and write speeds with",
+      "configurable test sizes",
+      "and repeat runs."
+    ],
+    "alt": "DriveClue Disk Speed Test showing sequential read and write throughput with a 1 GB test across four rounds.",
+    "png": "04-disk-speed-test.png",
+    "webp": "web/04-disk-speed-test.webp",
+    "original": "originals/04-disk-speed-test.png",
+    "crop": {
+      "left": 14,
+      "top": 6,
+      "width": 2496,
+      "height": 1790
+    },
+    "width": 2560,
+    "height": 1600
+  },
+  {
+    "feature": "STORAGE ANALYZER",
+    "label": "05 / STORAGE ANALYZER",
+    "headline": "See where your space goes.",
+    "headlineLines": [
+      "See where your",
+      "space goes."
+    ],
+    "description": "Explore files and folders by size. Start an analysis whenever you need it.",
+    "descriptionLines": [
+      "Explore files and folders",
+      "by size. Start an analysis",
+      "whenever you need it."
+    ],
+    "alt": "DriveClue Storage Analyzer start screen with an Analyze Disk button for exploring files and folders by size.",
+    "png": "05-storage-analyzer.png",
+    "webp": "web/05-storage-analyzer.webp",
+    "original": "originals/05-storage-analyzer.png",
+    "crop": {
+      "left": 16,
+      "top": 14,
+      "width": 2496,
+      "height": 1790
+    },
+    "width": 2560,
+    "height": 1600
+  }
+]

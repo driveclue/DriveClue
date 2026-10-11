@@ -2,7 +2,7 @@ import Foundation
 
 public enum Diagnosis {
     public static func lines(for drive: DriveSnapshot) -> [String] {
-        guard drive.readError == nil else { return [drive.readError ?? ""] }
+        guard drive.hasHealthReading else { return [drive.readError ?? "S.M.A.R.T. health data is unavailable."] }
         var lines: [String] = []
         for indicator in drive.indicators where indicator.status != .ok {
             switch indicator.id {
@@ -49,29 +49,38 @@ public enum ReportBuilder {
             lines.append("Device: \(drive.devicePath)")
             lines.append("Capacity: \(ByteFormat.bytes(drive.capacityBytes))")
             lines.append("Sector size: \(drive.sectorSize) bytes")
-            if let hours = drive.powerOnHours { lines.append("Power on: \(ByteFormat.durationHours(hours))") }
-            if let cycles = drive.powerCycleCount { lines.append("Power cycles: \(cycles)") }
-            lines.append("Status: \(drive.statusLine)\(drive.issueCount > 0 ? " · \(drive.issueCount) issue(s)" : "")")
-            lines.append(String(format: "Overall health: %.1f%% %@", drive.overallHealth, drive.healthBand.title))
-            if let performance = drive.performance, let band = drive.performanceBand {
-                lines.append(String(format: "Performance: %.1f%% %@", performance, band.title))
+            if drive.hasHealthReading {
+                if let hours = drive.powerOnHours { lines.append("Power on: \(ByteFormat.durationHours(hours))") }
+                if let cycles = drive.powerCycleCount { lines.append("Power cycles: \(cycles)") }
+                lines.append("Status: \(drive.statusLine)\(drive.issueCount > 0 ? " · \(drive.issueCount) issue(s)" : "")")
+                if let health = drive.presentableHealth, let band = drive.presentableHealthBand {
+                    lines.append(String(format: "Overall health: %.1f%% %@", health, band.title))
+                }
+                if let performance = drive.performance, let band = drive.performanceBand {
+                    lines.append(String(format: "Performance: %.1f%% %@", performance, band.title))
+                }
+                if let life = drive.ssdLife, let band = drive.ssdLifeBand {
+                    lines.append(String(format: "SSD life left: %.1f%% %@", life, band.title))
+                }
+                if let temp = drive.temperatureCelsius { lines.append("Temperature: \(temp) °C") }
+            } else {
+                lines.append("Status: Unavailable")
+                lines.append("Overall health: Unavailable")
             }
-            if let life = drive.ssdLife, let band = drive.ssdLifeBand {
-                lines.append(String(format: "SSD life left: %.1f%% %@", life, band.title))
-            }
-            if let temp = drive.temperatureCelsius { lines.append("Temperature: \(temp) °C") }
             if let error = drive.readError { lines.append("Note: \(error)") }
             let diagnosis = Diagnosis.lines(for: drive)
             if !diagnosis.isEmpty {
                 lines.append("Diagnosis:")
                 diagnosis.forEach { lines.append("  - \($0)") }
             }
-            lines.append("Indicators:")
-            for indicator in drive.indicators {
-                let rating = indicator.rating.map { String(format: "%.0f%%", $0) } ?? "—"
-                lines.append("  \(indicator.id) \(indicator.name): \(indicator.rawDisplay)  value \(indicator.current.map(String.init) ?? "—") / worst \(indicator.worst.map(String.init) ?? "—") / threshold \(indicator.threshold.map(String.init) ?? "—")  \(rating) \(indicator.status.title)")
+            if drive.hasHealthReading {
+                lines.append("Indicators:")
+                for indicator in drive.indicators {
+                    let rating = indicator.rating.map { String(format: "%.0f%%", $0) } ?? "—"
+                    lines.append("  \(indicator.id) \(indicator.name): \(indicator.rawDisplay)  value \(indicator.current.map(String.init) ?? "—") / worst \(indicator.worst.map(String.init) ?? "—") / threshold \(indicator.threshold.map(String.init) ?? "—")  \(rating) \(indicator.status.title)")
+                }
             }
-            if !drive.selfTests.isEmpty {
+            if drive.hasHealthReading && !drive.selfTests.isEmpty {
                 lines.append("Self-tests:")
                 for test in drive.selfTests.prefix(12) {
                     lines.append("  \(test.testType) at \(test.powerOnHours.map(String.init) ?? "—") h — \(test.status) — LBA \(test.failingLBA)")
@@ -84,7 +93,7 @@ public enum ReportBuilder {
 
     public static func csv(drives: [DriveSnapshot]) -> String {
         var lines = ["drive,id,name,raw,current,worst,threshold,rating,status"]
-        for drive in drives {
+        for drive in drives where drive.hasHealthReading {
             for indicator in drive.indicators {
                 let cells = [
                     drive.model,
@@ -107,7 +116,23 @@ public enum ReportBuilder {
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         encoder.dateEncodingStrategy = .iso8601
-        return (try? encoder.encode(drives)) ?? Data()
+        guard let encoded = try? encoder.encode(drives),
+              var records = try? JSONSerialization.jsonObject(with: encoded) as? [[String: Any]] else { return Data() }
+        for index in drives.indices {
+            records[index]["hasHealthReading"] = drives[index].hasHealthReading
+            guard !drives[index].hasHealthReading else { continue }
+            // The model keeps legacy nonoptional defaults for compatibility. In an
+            // exported report those defaults must not become fabricated readings.
+            for key in ["overallHealth", "healthBand", "performance", "performanceBand",
+                        "ssdLife", "ssdLifeBand", "smartStatus", "issueCount",
+                        "powerOnHours", "powerCycleCount", "temperatureCelsius",
+                        "temperatureMin", "temperatureMax", "overTemperatureMinutes",
+                        "underTemperatureMinutes", "bytesWritten", "indicators",
+                        "errors", "statistics", "selfTests", "selfTestProgress"] {
+                records[index].removeValue(forKey: key)
+            }
+        }
+        return (try? JSONSerialization.data(withJSONObject: records, options: [.prettyPrinted, .sortedKeys])) ?? Data()
     }
 
     private static func escape(_ value: String) -> String {
@@ -122,28 +147,5 @@ public enum ReportBuilder {
         formatter.dateStyle = .medium
         formatter.timeStyle = .medium
         return formatter.string(from: date)
-    }
-}
-
-public struct FreeSpaceAlert: Sendable, Equatable {
-    public var volumeName: String
-    public var bsdName: String
-    public var freePercent: Int
-    public var threshold: Int
-}
-
-public enum FreeSpaceMonitor {
-    public static func alerts(drives: [DriveSnapshot], thresholds: [String: Int]) -> [FreeSpaceAlert] {
-        var results: [FreeSpaceAlert] = []
-        for drive in drives {
-            for volume in drive.volumes where volume.isUserFacing && volume.mountPath != nil && volume.totalBytes > 0 {
-                guard let threshold = thresholds[volume.bsdName] else { continue }
-                let free = Int((Double(volume.availableBytes) / Double(volume.totalBytes)) * 100)
-                if free < threshold {
-                    results.append(FreeSpaceAlert(volumeName: volume.name, bsdName: volume.bsdName, freePercent: free, threshold: threshold))
-                }
-            }
-        }
-        return results
     }
 }

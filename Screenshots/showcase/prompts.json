@@ -1,0 +1,38 @@
+{
+  "mode": "built-in image_gen background edit; original screenshot compositing for final exports",
+  "finalBackgroundPrompt": "Use case: precise-object-edit\nAsset type: background layer for existing app screenshot showcases.\nInput image 1 is the edit target: the current blue textured background.\nReplace the entire background with a completely flat, uniform, solid light gray, exact color #F1F1F1 (RGB 241, 241, 241).\nPreserve the same wide 16:10 canvas framing.\nThe result must contain only this plain light gray color. No gradient, no texture, no grain, no glow, no clouds, no atmospheric effects, no vignette, no lighting effects, no shadows, no words, no logo, no UI, no objects.\nThe screenshot and description will be composited separately; do not draw any of them.",
+  "background": "#F1F1F1, uniform RGB 241, 241, 241; normalized to a flat solid fill",
+  "palette": {
+    "headline": "#20252B",
+    "description": "#59636E",
+    "featureLabel": "#54697A"
+  },
+  "cards": [
+    {
+      "asset": "01-dashboard.png",
+      "headline": "Your drive health, at a glance.",
+      "description": "Check S.M.A.R.T. status, overall health, and SSD lifetime in one clear overview."
+    },
+    {
+      "asset": "02-health-indicators.png",
+      "headline": "Every signal. One clear view.",
+      "description": "Explore S.M.A.R.T. indicators, temperature, and wear with searchable, filterable details."
+    },
+    {
+      "asset": "03-device-statistics.png",
+      "headline": "Your drive’s story, in numbers.",
+      "description": "See lifetime reads and writes, power cycles, SSD endurance, and temperature at a glance."
+    },
+    {
+      "asset": "04-disk-speed-test.png",
+      "headline": "Put performance to the test.",
+      "description": "Benchmark sequential read and write speeds with configurable test sizes and repeat runs."
+    },
+    {
+      "asset": "05-storage-analyzer.png",
+      "headline": "See where your space goes.",
+      "description": "Explore files and folders by size. Start an analysis whenever you need it."
+    }
+  ],
+  "fidelity": "Final exports use the original app screenshots and brand icon. Only exterior capture margins are cropped. Text, values, controls and colors inside each app window are preserved. render.cjs adds dark caption text and a subtle window shadow on the plain light gray background."
+}

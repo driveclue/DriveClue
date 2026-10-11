@@ -7,28 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030BA7D4FE76C9FEEA57816A /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8395F2DC7D3E4C19688B57CE /* AppIcon.png */; };
+		1088F8ECF1F09C9D3BEDEF4E /* StatisticsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A108A8EA1BD0362A2D0E99A /* StatisticsViews.swift */; };
 		1F2464BACCB1BD570F88F734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C44348705BF0CC53F3C123 /* Assets.xcassets */; };
 		37B89DDD09B6D555150F627B /* DetailViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EBFDD5E07DD309778A6860 /* DetailViews.swift */; };
-		58BE5E361150AD610743ED4C /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */; };
+		4D6F2DAC00E9D63DF994805D /* IndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A97E8859A0357CA69DD5AF /* IndicatorsView.swift */; };
+		58548529D8FCC67CC6065555 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308B1412D131F581B9FF468F /* Theme.swift */; };
+		5B2F08BB4D9B2BDA8524FFCF /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1FB187CCA0CBDF9550CC7 /* Updater.swift */; };
 		5BE35C2C64A884071D56B3AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F5EBE99F7519C8868CE0 /* ContentView.swift */; };
+		60E809A0F930178194ACED82 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0EA9CA4DA64D10C4AD927B79 /* PrivacyInfo.xcprivacy */; };
+		73F85FC41C1CC3BEBA4CC2C4 /* DiskBenchmarkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA85F54ABE175D4EC8FA749 /* DiskBenchmarkState.swift */; };
+		7876E0C6059A5A40810AD268 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1E2B65E65A4FE4827C625 /* Sparkle */; };
+		846AB8BC252846CEB5CC2368 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2535CE0CE23385E823025 /* Components.swift */; };
+		A8556B4FFCD5E162E27025FB /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2532BF2FA5F25B43D53DBC8 /* AppInfo.swift */; };
 		B2BF0F3E7349766527276A1C /* DriveClueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4780CCC7AF3FEAF412BF102F /* DriveClueApp.swift */; };
-		B2F0667C31CBD80DE1B22622 /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB57733350679DE647A025C /* UpdateChecker.swift */; };
 		BC6831F4DDD1A76A9D377BE6 /* DriveClueCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2BA0DCB9EB20DB0AAF9B5709 /* DriveClueCore */; };
 		CF1FAAEC40FEF49BBA638C65 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129E5047B4D44606C59D81B5 /* DashboardView.swift */; };
 		EC1E39C44F5058FDE74CDAC2 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB51FED2E96AF418771C863A /* AppModel.swift */; };
+		FB0BA930F9E7E241121BEE5E /* UsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D88D6B6F5323B9F1D4366B1 /* UsageView.swift */; };
+		FD5AB6F2F1C871AC22A71DBB /* UsageBrowserPanes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2804B7FC3847317F71F207 /* UsageBrowserPanes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EA9CA4DA64D10C4AD927B79 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		129E5047B4D44606C59D81B5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		1D88D6B6F5323B9F1D4366B1 /* UsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageView.swift; sourceTree = "<group>"; };
 		2F4A2EA2772994E0164F7E68 /* DriveClue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveClue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		308B1412D131F581B9FF468F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4780CCC7AF3FEAF412BF102F /* DriveClueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveClueApp.swift; sourceTree = "<group>"; };
 		5CE0F5EBE99F7519C8868CE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		6F2804B7FC3847317F71F207 /* UsageBrowserPanes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageBrowserPanes.swift; sourceTree = "<group>"; };
+		74A97E8859A0357CA69DD5AF /* IndicatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsView.swift; sourceTree = "<group>"; };
+		8395F2DC7D3E4C19688B57CE /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		8A108A8EA1BD0362A2D0E99A /* StatisticsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViews.swift; sourceTree = "<group>"; };
+		ACB2535CE0CE23385E823025 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		B8EBFDD5E07DD309778A6860 /* DetailViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViews.swift; sourceTree = "<group>"; };
-		BCB57733350679DE647A025C /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
+		D8DEFBD8B2847CB83514F400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9C44348705BF0CC53F3C123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1AE451BCC8A107BFA692AF9 /* DriveClueCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DriveClueCore; path = DriveClueCore; sourceTree = SOURCE_ROOT; };
 		EB51FED2E96AF418771C863A /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		F2532BF2FA5F25B43D53DBC8 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		F9E1FB187CCA0CBDF9550CC7 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
+		FAA85F54ABE175D4EC8FA749 /* DiskBenchmarkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskBenchmarkState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6831F4DDD1A76A9D377BE6 /* DriveClueCore in Frameworks */,
+				7876E0C6059A5A40810AD268 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,14 +84,24 @@
 		E3859EC47ECCA805101992D2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				8395F2DC7D3E4C19688B57CE /* AppIcon.png */,
+				F2532BF2FA5F25B43D53DBC8 /* AppInfo.swift */,
 				EB51FED2E96AF418771C863A /* AppModel.swift */,
 				D9C44348705BF0CC53F3C123 /* Assets.xcassets */,
+				ACB2535CE0CE23385E823025 /* Components.swift */,
 				5CE0F5EBE99F7519C8868CE0 /* ContentView.swift */,
 				129E5047B4D44606C59D81B5 /* DashboardView.swift */,
 				B8EBFDD5E07DD309778A6860 /* DetailViews.swift */,
+				FAA85F54ABE175D4EC8FA749 /* DiskBenchmarkState.swift */,
 				4780CCC7AF3FEAF412BF102F /* DriveClueApp.swift */,
-				85E61864ACE7FEB68DA73D37 /* PreferencesView.swift */,
-				BCB57733350679DE647A025C /* UpdateChecker.swift */,
+				74A97E8859A0357CA69DD5AF /* IndicatorsView.swift */,
+				D8DEFBD8B2847CB83514F400 /* Info.plist */,
+				0EA9CA4DA64D10C4AD927B79 /* PrivacyInfo.xcprivacy */,
+				8A108A8EA1BD0362A2D0E99A /* StatisticsViews.swift */,
+				308B1412D131F581B9FF468F /* Theme.swift */,
+				F9E1FB187CCA0CBDF9550CC7 /* Updater.swift */,
+				6F2804B7FC3847317F71F207 /* UsageBrowserPanes.swift */,
+				1D88D6B6F5323B9F1D4366B1 /* UsageView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -101,6 +132,7 @@
 			name = DriveClue;
 			packageProductDependencies = (
 				2BA0DCB9EB20DB0AAF9B5709 /* DriveClueCore */,
+				F6C1E2B65E65A4FE4827C625 /* Sparkle */,
 			);
 			productName = DriveClue;
 			productReference = 2F4A2EA2772994E0164F7E68 /* DriveClue.app */;
@@ -116,7 +148,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					BA662735C0BBFB76CD26A836 = {
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = R3YX83R9RQ;
 					};
 				};
 			};
@@ -130,6 +162,7 @@
 			mainGroup = AB794B5BD182F13FBFEF1CEE;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				E500E0CBAFECD9EA70B62A15 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				995BCD7F6AA755F3717367C5 /* XCLocalSwiftPackageReference "DriveClueCore" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -147,7 +180,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030BA7D4FE76C9FEEA57816A /* AppIcon.png in Resources */,
 				1F2464BACCB1BD570F88F734 /* Assets.xcassets in Resources */,
+				60E809A0F930178194ACED82 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,13 +193,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8556B4FFCD5E162E27025FB /* AppInfo.swift in Sources */,
 				EC1E39C44F5058FDE74CDAC2 /* AppModel.swift in Sources */,
+				846AB8BC252846CEB5CC2368 /* Components.swift in Sources */,
 				5BE35C2C64A884071D56B3AD /* ContentView.swift in Sources */,
 				CF1FAAEC40FEF49BBA638C65 /* DashboardView.swift in Sources */,
 				37B89DDD09B6D555150F627B /* DetailViews.swift in Sources */,
+				73F85FC41C1CC3BEBA4CC2C4 /* DiskBenchmarkState.swift in Sources */,
 				B2BF0F3E7349766527276A1C /* DriveClueApp.swift in Sources */,
-				58BE5E361150AD610743ED4C /* PreferencesView.swift in Sources */,
-				B2F0667C31CBD80DE1B22622 /* UpdateChecker.swift in Sources */,
+				4D6F2DAC00E9D63DF994805D /* IndicatorsView.swift in Sources */,
+				1088F8ECF1F09C9D3BEDEF4E /* StatisticsViews.swift in Sources */,
+				58548529D8FCC67CC6065555 /* Theme.swift in Sources */,
+				5B2F08BB4D9B2BDA8524FFCF /* Updater.swift in Sources */,
+				FD5AB6F2F1C871AC22A71DBB /* UsageBrowserPanes.swift in Sources */,
+				FB0BA930F9E7E241121BEE5E /* UsageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,21 +280,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R3YX83R9RQ;
 				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = DriveClue;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.drivestats.DriveStats;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trantuan.driveclue;
 				PRODUCT_NAME = DriveClue;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -319,21 +360,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R3YX83R9RQ;
 				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = DriveClue;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.drivestats.DriveStats;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trantuan.driveclue;
 				PRODUCT_NAME = DriveClue;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -370,10 +410,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E500E0CBAFECD9EA70B62A15 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		2BA0DCB9EB20DB0AAF9B5709 /* DriveClueCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DriveClueCore;
+		};
+		F6C1E2B65E65A4FE4827C625 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E500E0CBAFECD9EA70B62A15 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

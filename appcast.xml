@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>DriveClue</title>
+    <link>https://github.com/driveclue/DriveClue</link>
+    <description>DriveClue update feed</description>
+    <language>en</language>
+    <!-- scripts/release.sh prepends a new <item> for every published release.
+         Do not edit signatures by hand; run the script so the EdDSA signature
+         matches the uploaded archive. -->
+  </channel>
+</rss>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#35B374"/>
+      <stop offset="0.55" stop-color="#1F8E56"/>
+      <stop offset="1" stop-color="#0E6240"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D2EFE0"/>
+    </linearGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#012F1C" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#bg)"/>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#sheen)"/>
+
+  <g transform="translate(-8,-30)">
+    <!-- drive hero -->
+    <g filter="url(#ds)">
+      <rect x="252" y="356" width="470" height="280" rx="60" fill="url(#metal)"/>
+    </g>
+    <rect x="296" y="580" width="120" height="22" rx="11" fill="#0E2A47" opacity="0.15"/>
+    <circle cx="560" cy="598" r="15" fill="#17A967"/>
+
+    <!-- health badge -->
+    <g filter="url(#ds)">
+      <circle cx="700" cy="658" r="112" fill="#0D5E3C" stroke="#FFFFFF" stroke-width="18"/>
+    </g>
+    <path d="M 700 726 C 662 692, 638 664, 638 636 C 638 610, 658 594, 678 594 C 690 594, 698 602, 700 610 C 702 602, 710 594, 722 594 C 742 594, 762 610, 762 636 C 762 664, 738 692, 700 726 Z" fill="#FFFFFF"/>
+    <polyline points="664,648 678,648 687,630 700,666 709,648 723,648" fill="none" stroke="#0D5E3C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

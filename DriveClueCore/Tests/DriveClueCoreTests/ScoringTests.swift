@@ -43,7 +43,7 @@ final class ScoringTests: XCTestCase {
         let summary = DriveScorer.summarize(indicators, isSSD: true)
         XCTAssertEqual(summary.ssdLife, 97)
         XCTAssertEqual(summary.status, .failing)
-        XCTAssertEqual(indicators.first { $0.id == 11 }?.status, .failing)
+        XCTAssertEqual(indicators.first { $0.id == 14 }?.status, .failing)
     }
 
     func testAttributeParserReadsTwelveByteRecords() {
@@ -99,15 +99,88 @@ final class ScoringTests: XCTestCase {
         XCTAssertEqual(sections.first?.entries.first?.name, "Lifetime Power-on Resets")
     }
 
-    func testReportAndFreeSpace() {
+    func testFailedSnapshotKeepsRegistryIdentityButNoDecodedMeasurements() {
+        for transport in [DriveTransport.ata, .nvme] {
+            let failed = DriveReader.failedSnapshot(
+                bsd: "disk8", volumes: [], transport: transport,
+                model: "Registry Model", serial: "SERIAL8", firmware: "R1",
+                capacity: 1_000_000, block: 512, interconnect: "SATA",
+                location: "External", ioErrors: 3, removable: true,
+                ejectable: false, checked: Date(), reason: "Health log read failed"
+            )
+            XCTAssertEqual(failed.model, "Registry Model")
+            XCTAssertEqual(failed.serial, "SERIAL8")
+            XCTAssertEqual(failed.transport, transport)
+            XCTAssertEqual(failed.ioErrorCount, 3)
+            XCTAssertFalse(failed.hasHealthReading)
+            XCTAssertNil(failed.presentableHealth)
+            XCTAssertNil(failed.powerOnHours)
+            XCTAssertNil(failed.temperatureCelsius)
+            XCTAssertNil(failed.bytesWritten)
+            XCTAssertNil(failed.ssdLife)
+            XCTAssertTrue(failed.indicators.isEmpty)
+            XCTAssertTrue(failed.statistics.isEmpty)
+            XCTAssertEqual(failed.issueCount, 0)
+            XCTAssertEqual(failed.statusLine, "Unavailable")
+        }
+    }
+
+    func testUnqueriedIOErrorsAreNotReportedAsZero() {
+        var drive = sampleDrive()
+        drive.ioErrorCount = nil
+        XCTAssertNil(drive.ioErrorCount)
+        let text = ReportBuilder.text(drives: [drive])
+        XCTAssertFalse(text.contains("I/O errors in system log: 0"))
+    }
+
+    func testFailedMeasurementHasNoPresentableHealthOrSeverity() {
+        var drive = sampleDrive()
+        XCTAssertTrue(drive.hasHealthReading)
+        XCTAssertEqual(drive.presentableHealth, 100)
+        XCTAssertEqual(drive.presentableHealthBand, .good)
+        drive.readError = "Read timed out"
+        XCTAssertFalse(drive.hasHealthReading)
+        XCTAssertNil(drive.presentableHealth)
+        XCTAssertNil(drive.presentableHealthBand)
+        XCTAssertEqual(drive.statusLine, "Unavailable")
+        XCTAssertEqual(drive.verdict, "Read timed out")
+        XCTAssertEqual(Diagnosis.lines(for: drive), ["Read timed out"])
+        drive.readError = nil
+        drive.transport = .unavailable
+        XCTAssertFalse(drive.hasHealthReading)
+        XCTAssertEqual(drive.statusLine, "Unavailable")
+        XCTAssertNil(drive.presentableHealth)
+    }
+
+    func testReportNeverExportsFailedReadAsHealthOrSeverity() throws {
+        var drive = sampleDrive()
+        drive.readError = "Health log unavailable"
+        // Even stale or partially decoded readings cannot leak through exports.
+        let text = ReportBuilder.text(drives: [drive])
+        XCTAssertTrue(text.contains("Status: Unavailable"))
+        XCTAssertTrue(text.contains("Overall health: Unavailable"))
+        XCTAssertFalse(text.contains("Overall health: 100.0%"))
+        XCTAssertFalse(text.contains("Status: Failing"))
+        XCTAssertFalse(text.contains("SSD life left:"))
+        XCTAssertFalse(text.contains("Power on:"))
+        XCTAssertFalse(text.contains("Indicators:"))
+        XCTAssertEqual(ReportBuilder.csv(drives: [drive]).split(separator: "\n").count, 1)
+        let records = try XCTUnwrap(JSONSerialization.jsonObject(with: ReportBuilder.json(drives: [drive])) as? [[String: Any]])
+        let record = try XCTUnwrap(records.first)
+        XCTAssertEqual(record["hasHealthReading"] as? Bool, false)
+        XCTAssertNil(record["overallHealth"])
+        XCTAssertNil(record["healthBand"])
+        XCTAssertNil(record["smartStatus"])
+        XCTAssertNil(record["indicators"])
+        XCTAssertEqual(record["readError"] as? String, "Health log unavailable")
+    }
+
+    func testReports() {
         let drive = sampleDrive()
         let text = ReportBuilder.text(drives: [drive])
         XCTAssertTrue(text.contains("Samsung SSD"))
         let csv = ReportBuilder.csv(drives: [drive])
         XCTAssertTrue(csv.contains("Reallocated"))
-        let alerts = FreeSpaceMonitor.alerts(drives: [drive], thresholds: ["disk3s5": 20])
-        XCTAssertEqual(alerts.count, 1)
-        XCTAssertEqual(alerts[0].freePercent, 10)
     }
 
     func testHistoryDeltas() throws {
@@ -133,6 +206,47 @@ final class ScoringTests: XCTestCase {
         XCTAssertTrue(lines.contains { $0.contains("cable") })
     }
 
+    func testIdentifyParsesStringsCapacityAndFlags() {
+        var data = Data(repeating: 0, count: 512)
+        // ATA strings store each character pair byte-swapped inside its word.
+        func write(_ text: String, word: Int, count: Int) {
+            let chars = Array(text)
+            for index in 0..<count {
+                let offset = (word + index) * 2
+                let first = index * 2 < chars.count ? chars[index * 2] : " "
+                let second = index * 2 + 1 < chars.count ? chars[index * 2 + 1] : " "
+                data[offset] = second.asciiValue ?? 0x20
+                data[offset + 1] = first.asciiValue ?? 0x20
+            }
+        }
+        write("SAMSUNG SSD 830", word: 27, count: 20)
+        write("S3Z8NB0K123456", word: 10, count: 10)
+        write("1B0Q", word: 23, count: 4)
+        let lba48 = 1 << 10
+        data[83 * 2 + 1] = UInt8(lba48 >> 8) // word 83: LBA48 supported
+        data[82 * 2] = 1 // word 82 bit 0: SMART supported
+        data[84 * 2] = 1 << 1 // word 84 bit 1: self-test supported
+        data[169 * 2] = 1 // word 169 bit 0: TRIM supported
+        data[217 * 2] = 1 // word 217: rotation rate 1 marks an SSD
+        let sectors: UInt32 = 512_000_000
+        data[100 * 2] = UInt8(truncatingIfNeeded: sectors)
+        data[100 * 2 + 1] = UInt8(truncatingIfNeeded: sectors >> 8)
+        data[101 * 2] = UInt8(truncatingIfNeeded: sectors >> 16)
+        data[101 * 2 + 1] = UInt8(truncatingIfNeeded: sectors >> 24)
+
+        let identity = try! XCTUnwrap(ATAParser.identify(data: data))
+        XCTAssertEqual(identity.model, "SAMSUNG SSD 830")
+        XCTAssertEqual(identity.serial, "S3Z8NB0K123456")
+        XCTAssertEqual(identity.firmware, "1B0Q")
+        XCTAssertEqual(identity.sectorCount, 512_000_000)
+        XCTAssertEqual(identity.sectorSize, 512)
+        XCTAssertTrue(identity.isSSD)
+        XCTAssertTrue(identity.supportsSMART)
+        XCTAssertTrue(identity.supportsSelfTest)
+        XCTAssertTrue(identity.supportsTRIM)
+        XCTAssertNil(identity.wwn)
+    }
+
     private func sampleDrive() -> DriveSnapshot {
         let indicator = HealthIndicator(
             id: 5,
@@ -141,7 +255,6 @@ final class ScoringTests: XCTestCase {
             updateMode: .online,
             raw: 3,
             rawDisplay: "3",
-            rawIsApproximate: false,
             current: 100,
             worst: 100,
             threshold: 10,

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#33BA78"/><stop offset=".55" stop-color="#158759"/><stop offset="1" stop-color="#07513A"/>
+    </linearGradient>
+    <linearGradient id="case" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#F9FFF9"/><stop offset="1" stop-color="#CFE8DC"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="22" stdDeviation="25" flood-color="#003A29" flood-opacity=".38"/>
+    </filter>
+  </defs>
+  <rect x="72" y="72" width="880" height="880" rx="204" fill="url(#tile)"/>
+  <path d="M150 405C198 216 367 130 561 128" fill="none" stroke="#B4FFD3" stroke-opacity=".22" stroke-width="20" stroke-linecap="round"/>
+  <!-- A portrait external drive, large enough to remain legible in the Dock. -->
+  <g filter="url(#shadow)">
+    <rect x="256" y="222" width="512" height="584" rx="78" fill="url(#case)"/>
+    <rect x="293" y="263" width="438" height="434" rx="52" fill="#145D46"/>
+  </g>
+  <path d="M313 288h398" stroke="#7CC8A4" stroke-opacity=".35" stroke-width="11" stroke-linecap="round"/>
+  <!-- The drive platter doubles as a stethoscope chest piece. -->
+  <circle cx="512" cy="474" r="148" fill="#0B4435" stroke="#9EE7BE" stroke-width="19"/>
+  <circle cx="512" cy="474" r="107" fill="#1C9A65" stroke="#E9FFF1" stroke-width="29"/>
+  <circle cx="512" cy="474" r="64" fill="#0B6145"/>
+  <path d="M466 474h26l16-30 26 61 18-31h18" fill="none" stroke="#F8FFF8" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Ear tubes emerge from the device, making the doctor metaphor explicit. -->
+  <path d="M438 328c-16-35-49-51-70-42-25 11-27 51-5 84m223-42c16-35 49-51 70-42 25 11 27 51 5 84" fill="none" stroke="#F8FFF8" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="359" cy="371" r="15" fill="#F8FFF8"/><circle cx="665" cy="371" r="15" fill="#F8FFF8"/>
+  <rect x="339" y="729" width="180" height="17" rx="8.5" fill="#8EBBA8"/>
+  <circle cx="674" cy="738" r="19" fill="#25BB74"/>
+</svg>

@@ -1,5 +1,17 @@
 import Foundation
 
+/// The aggregate health picture computed from a drive's indicators.
+public struct HealthSummary: Sendable {
+    public var health: Double
+    public var healthBand: HealthBand
+    public var performance: Double?
+    public var performanceBand: HealthBand?
+    public var ssdLife: Double?
+    public var ssdLifeBand: HealthBand?
+    public var status: IndicatorStatus
+    public var issues: Int
+}
+
 public enum DriveScorer {
     public static func score(attribute: RawAttribute, model: String, isSSD: Bool, sectorSize: Int = 512) -> HealthIndicator {
         let info = AttributeCatalog.info(id: attribute.id, model: model)
@@ -31,7 +43,6 @@ public enum DriveScorer {
             updateMode: mode,
             raw: attribute.raw,
             rawDisplay: rawText(attribute: attribute, style: info.rawStyle, sectorSize: sectorSize),
-            rawIsApproximate: info.rawStyle == .hex,
             current: attribute.current,
             worst: attribute.worst,
             threshold: attribute.threshold > 0 ? attribute.threshold : nil,
@@ -44,7 +55,7 @@ public enum DriveScorer {
         )
     }
 
-    public static func summarize(_ indicators: [HealthIndicator], isSSD: Bool) -> (health: Double, healthBand: HealthBand, performance: Double?, performanceBand: HealthBand?, ssdLife: Double?, ssdLifeBand: HealthBand?, status: IndicatorStatus, issues: Int) {
+    public static func summarize(_ indicators: [HealthIndicator], isSSD: Bool) -> HealthSummary {
         let healthPool = indicators.filter(\.countsTowardHealth).compactMap(\.rating)
         let health = healthPool.min() ?? 100
         let performancePool = indicators.filter(\.affectsPerformance).compactMap(\.rating)
@@ -58,15 +69,15 @@ public enum DriveScorer {
         case .failing: status = .failing
         case .warning, .ok: status = issues > 0 && worst == .warning ? .warning : .ok
         }
-        return (
-            health,
-            HealthBand.band(for: health),
-            performance,
-            performance.map(HealthBand.band(for:)),
-            life,
-            life.map(HealthBand.band(for:)),
-            status,
-            issues
+        return HealthSummary(
+            health: health,
+            healthBand: HealthBand.band(for: health),
+            performance: performance,
+            performanceBand: performance.map(HealthBand.band(for:)),
+            ssdLife: life,
+            ssdLifeBand: life.map(HealthBand.band(for:)),
+            status: status,
+            issues: issues
         )
     }
 

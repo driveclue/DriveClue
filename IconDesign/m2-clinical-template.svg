@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#29B58C"/><stop offset=".55" stop-color="#11896C"/><stop offset="1" stop-color="#075547"/>
+    </linearGradient>
+    <linearGradient id="caseg" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FBFFFC"/><stop offset="1" stop-color="#CAE9DD"/>
+    </linearGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#00382E" flood-opacity="0.45"/>
+    </filter>
+    <filter id="ds2" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#00382E" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#tile)"/>
+  <path d="M 182 343 c 102 -139, 235 -188, 386 -170" fill="none" stroke="#B2FFE3" stroke-opacity="0.18" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- M.2 SSD hero, vertically centered -->
+  <g filter="url(#ds)">
+    <image href="__B64__" x="149" y="80" width="720" height="720"/>
+  </g>
+
+  <!-- clinical readout card -->
+  <g filter="url(#ds2)">
+    <rect x="312" y="611" width="400" height="168" rx="44" fill="url(#caseg)"/>
+  </g>
+  <path d="M 360 684 h 56 l 26 -38 l 38 66 l 34 -62 l 28 42 l 18 -18 h 46" fill="none" stroke="#0F9A63" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="360" y="736" width="112" height="12" rx="6" fill="#93BDA9"/>
+  <circle cx="636" cy="742" r="11" fill="#17B978"/>
+</svg>

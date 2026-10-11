@@ -143,7 +143,7 @@ public enum ATAParser {
         let remain = byte & 0x0F
         let percent = max(0, min(100, 100 - remain * 10))
         let minutes = extendedMinutes > shortMinutes ? extendedMinutes : shortMinutes
-        return SelfTestProgress(percent: percent, remainingMinutes: minutes == 0 ? nil : minutes, isExtended: extendedMinutes > 2)
+        return SelfTestProgress(percent: percent, remainingMinutes: minutes == 0 ? nil : minutes)
     }
 
     public static func pollingMinutes(smartData: Data) -> (short: Int, extended: Int) {

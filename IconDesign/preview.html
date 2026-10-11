@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DriveClue — icon concepts</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 40px 48px 64px;
+    background: #14171c; color: #e8edf2;
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  }
+  h1 { font-size: 26px; font-weight: 700; margin: 0 0 6px; }
+  .sub { color: #93a1af; font-size: 14px; margin: 0 0 32px; }
+  .grid {
+    display: grid; gap: 24px; max-width: 1640px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+  .card {
+    background: #1d2127; border: 1px solid #2a3038; border-radius: 18px;
+    padding: 24px; display: flex; flex-direction: column; align-items: center;
+  }
+  .card img.hero { width: 240px; height: 240px; margin-bottom: 16px;
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,.5)); }
+  .card h2 { font-size: 17px; margin: 0 0 4px; }
+  .card p { font-size: 13px; color: #9fb0bf; margin: 0 0 18px; text-align: center; line-height: 1.45; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .4px;
+    color: #0e2a47; background: #58c98a; border-radius: 999px; padding: 2px 10px; margin-bottom: 10px; }
+  .chips { display: flex; gap: 12px; margin-top: auto; }
+  .chip { border-radius: 12px; padding: 12px 14px; display: flex; align-items: flex-end; gap: 12px; }
+  .chip.light { background: #eef1f5; }
+  .chip.dark  { background: #0b0d10; border: 1px solid #2a3038; }
+  .chip img { display: block; }
+</style>
+</head>
+<body>
+  <h1>DriveClue — app icon concepts</h1>
+  <p class="sub">macOS squircle on the site&rsquo;s navy&nbsp;/&nbsp;health-green palette. Big render = 240&nbsp;px; chips show 64 / 40 / 24 / 16&nbsp;px legibility on light and dark.</p>
+
+  <div class="grid">
+    <div class="card">
+      <span class="badge">RECOMMENDED</span>
+      <img class="hero" src="a-magnifier.svg" alt="The Clue">
+      <h2>A · The Clue</h2>
+      <p>Magnifying glass over the drive with a health pulse in the lens — the name, told literally.</p>
+      <div class="chips">
+        <div class="chip light">
+          <img src="a-magnifier.svg" width="64"><img src="a-magnifier.svg" width="40"><img src="a-magnifier.svg" width="24"><img src="a-magnifier.svg" width="16">
+        </div>
+        <div class="chip dark">
+          <img src="a-magnifier.svg" width="64"><img src="a-magnifier.svg" width="40"><img src="a-magnifier.svg" width="24"><img src="a-magnifier.svg" width="16">
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="hero" src="b-vitals.svg" alt="Vitals">
+      <h2>B · Vitals</h2>
+      <p>Drive outline with a heartbeat line — health monitoring in one glance, very legible small.</p>
+      <div class="chips">
+        <div class="chip light">
+          <img src="b-vitals.svg" width="64"><img src="b-vitals.svg" width="40"><img src="b-vitals.svg" width="24"><img src="b-vitals.svg" width="16">
+        </div>
+        <div class="chip dark">
+          <img src="b-vitals.svg" width="64"><img src="b-vitals.svg" width="40"><img src="b-vitals.svg" width="24"><img src="b-vitals.svg" width="16">
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="hero" src="c-gauge.svg" alt="Dashboard">
+      <h2>C · Dashboard</h2>
+      <p>Health gauge over a drive — mirrors the app&rsquo;s dashboard and its health-percentage scoring.</p>
+      <div class="chips">
+        <div class="chip light">
+          <img src="c-gauge.svg" width="64"><img src="c-gauge.svg" width="40"><img src="c-gauge.svg" width="24"><img src="c-gauge.svg" width="16">
+        </div>
+        <div class="chip dark">
+          <img src="c-gauge.svg" width="64"><img src="c-gauge.svg" width="40"><img src="c-gauge.svg" width="24"><img src="c-gauge.svg" width="16">
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="hero" src="d-evolution.svg" alt="Evolution">
+      <h2>D · Evolution</h2>
+      <p>The current placeholder SSD glyph, refined: teal gradient, depth, and a green life bar.</p>
+      <div class="chips">
+        <div class="chip light">
+          <img src="d-evolution.svg" width="64"><img src="d-evolution.svg" width="40"><img src="d-evolution.svg" width="24"><img src="d-evolution.svg" width="16">
+        </div>
+        <div class="chip dark">
+          <img src="d-evolution.svg" width="64"><img src="d-evolution.svg" width="40"><img src="d-evolution.svg" width="24"><img src="d-evolution.svg" width="16">
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="hero" src="e-beacon.svg" alt="Beacon">
+      <h2>E · Beacon</h2>
+      <p>The drive telling you something — status arcs rising from the device.</p>
+      <div class="chips">
+        <div class="chip light">
+          <img src="e-beacon.svg" width="64"><img src="e-beacon.svg" width="40"><img src="e-beacon.svg" width="24"><img src="e-beacon.svg" width="16">
+        </div>
+        <div class="chip dark">
+          <img src="e-beacon.svg" width="64"><img src="e-beacon.svg" width="40"><img src="e-beacon.svg" width="24"><img src="e-beacon.svg" width="16">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

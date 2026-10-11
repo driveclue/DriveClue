@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#20618F"/>
+      <stop offset="0.55" stop-color="#14406B"/>
+      <stop offset="1" stop-color="#0C2846"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#C7DCF0"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3DDC7A"/>
+      <stop offset="1" stop-color="#27C063"/>
+    </linearGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#001325" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#bg)"/>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#sheen)"/>
+
+  <!-- gauge track -->
+  <path d="M 280 548 A 232 232 0 0 1 744 548" fill="none" stroke="#FFFFFF" stroke-opacity="0.20" stroke-width="58" stroke-linecap="round"/>
+  <!-- ticks -->
+  <g stroke="#FFFFFF" stroke-opacity="0.30" stroke-width="9" stroke-linecap="round">
+    <line x1="220" y1="548" x2="194" y2="548"/>
+    <line x1="305.5" y1="341.5" x2="287.1" y2="323.1"/>
+    <line x1="512" y1="256" x2="512" y2="230"/>
+    <line x1="718.5" y1="341.5" x2="736.9" y2="323.1"/>
+    <line x1="804" y1="548" x2="830" y2="548"/>
+  </g>
+  <!-- healthy progress -->
+  <path d="M 280 548 A 232 232 0 0 1 623.8 344.7" fill="none" stroke="url(#pulse)" stroke-width="58" stroke-linecap="round"/>
+  <!-- needle + hub -->
+  <line x1="512" y1="548" x2="584" y2="417" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round"/>
+  <circle cx="512" cy="548" r="46" fill="#FFFFFF"/>
+  <circle cx="512" cy="548" r="20" fill="#14406B"/>
+
+  <!-- drive base -->
+  <g filter="url(#ds)">
+    <rect x="372" y="700" width="280" height="96" rx="30" fill="url(#metal)"/>
+  </g>
+  <rect x="404" y="736" width="120" height="24" rx="12" fill="#0E2A47" opacity="0.22"/>
+  <circle cx="612" cy="748" r="15" fill="#2FA84F"/>
+</svg>

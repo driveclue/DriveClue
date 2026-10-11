@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#21947F"/>
+      <stop offset="1" stop-color="#0D5348"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#00251F" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#bg)"/>
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="url(#sheen)"/>
+
+  <g transform="translate(14,4)" filter="url(#ds)">
+    <!-- enclosure lid -->
+    <path d="M 366 322 L 658 322 L 714 468 L 310 468 Z" fill="#FFFFFF" fill-opacity="0.14" stroke="#FFFFFF" stroke-width="44" stroke-linejoin="round"/>
+    <!-- front band -->
+    <rect x="266" y="468" width="492" height="212" rx="96" fill="#FFFFFF" fill-opacity="0.10" stroke="#FFFFFF" stroke-width="44"/>
+  </g>
+  <!-- life bars -->
+  <g transform="translate(14,4)">
+    <rect x="371" y="528" width="34" height="96" rx="17" fill="#FFFFFF"/>
+    <rect x="435" y="528" width="34" height="96" rx="17" fill="#FFFFFF"/>
+    <rect x="499" y="528" width="34" height="96" rx="17" fill="#FFFFFF"/>
+    <rect x="563" y="528" width="34" height="96" rx="17" fill="#FFFFFF"/>
+    <rect x="627" y="528" width="34" height="96" rx="17" fill="#45E082"/>
+  </g>
+</svg>

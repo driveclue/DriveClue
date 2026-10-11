@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#29B58C"/><stop offset=".55" stop-color="#11896C"/><stop offset="1" stop-color="#075547"/>
+    </linearGradient>
+    <linearGradient id="case" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FBFFFC"/><stop offset="1" stop-color="#CAE9DD"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#00382E" flood-opacity=".4"/>
+    </filter>
+  </defs>
+  <rect x="72" y="72" width="880" height="880" rx="204" fill="url(#tile)"/>
+  <path d="M154 315c102-139 235-188 386-170" fill="none" stroke="#B2FFE3" stroke-opacity=".18" stroke-width="20" stroke-linecap="round"/>
+  <!-- Solid drive silhouette, with the health report contained inside it. -->
+  <g filter="url(#shadow)">
+    <rect x="222" y="276" width="580" height="484" rx="79" fill="url(#case)"/>
+  </g>
+  <rect x="265" y="317" width="494" height="342" rx="41" fill="#0B3E3C"/>
+  <!-- A physician-style chart: signal, measured range, then assessment. -->
+  <path d="M297 473h86l34-52 50 108 57-154 60 120 40-51h105" fill="none" stroke="#6BE9A4" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M307 574h216" stroke="#4F9580" stroke-width="20" stroke-linecap="round"/>
+  <path d="M307 612h147" stroke="#4F9580" stroke-width="20" stroke-linecap="round"/>
+  <!-- Compact examination stamp is secondary to the drive. -->
+  <circle cx="658" cy="581" r="54" fill="#D8FFEA"/>
+  <path d="M658 551v60m-30-30h60" stroke="#118C60" stroke-width="18" stroke-linecap="round"/>
+  <rect x="275" y="698" width="151" height="16" rx="8" fill="#93BDA9"/>
+  <circle cx="737" cy="706" r="18" fill="#17B978"/>
+</svg>
